@@ -46,3 +46,14 @@ class Orbian:
     
     def __eq__(self,other):
         return self.__getBodyVolume() + self.__getHeadVolume() == other.__getBodyVolume() + other.__getHeadVolume()
+
+    def getVolume(self):
+        vol = self.__getBodyVolume() + self.__getHeadVolume()
+        return round(vol)
+
+    def getAge(self):
+        age = (time.time() - self.__BIRTH_TIME) / 5
+        return round(age)
+
+    def __len__(self):
+        return self.__BODY_HEIGHT + self.__HEAD_RADIUS * 2
