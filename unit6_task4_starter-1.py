@@ -76,13 +76,24 @@ def selectOrbian(famList, selected=None):
 ########### Define/Complete the functions below ###################
 
 def listFamily(famList):
+    for i in range(len(famList)):
+        print("I am orbian", famList[i].getName() )
     # <<<<<<<<<<<<<< Write code to list the Orbian family >>>>>>>>>>>>>>>
     pass # Remove this line to work on this function. It is here to prevent errors until it's defined
 
 def compare(famList):
-    #<<<<<<<<<<<<<< Write code to select two orbians to compare >>>>>>>>>>>>>>>
-    orb1 = orb2 = None # Remove this line to work on this function. It is here to prevent errors until it's defined
-
+    print("Select the first orbian to compare")
+    orb1 = selectOrbian(famList)
+    print("Select the second orbian to compare")
+    orb2 = selectOrbian(famList)
+    print("Performing analysis")
+    print("Orbian " + str(famList[first]))
+    if first < second:
+        print(famList[first], " is smaller than ", famlist[second])
+    elif first == second:
+        print(famList[first], "is equal to ", famList[second])
+    else:
+        print(famList[first], "is bigger than ", famList[second])
     ########### DO NOT MODIFY THIS FUNCTION BEYOND THIS LINE ############
     if (orb1 == orb2):
         print("\tOrbian " + orb1.getName() + " is equal to Orbian " + orb2.getName())

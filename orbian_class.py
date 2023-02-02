@@ -29,6 +29,11 @@ class Orbian:
 
     ####### ADD OTHER REQUIRED METHODS BELOW. SEE THE ASSIGNMENT DESCRIPTION AND OTHER STARTER CODE FOR INSIGHT ######
 
+    def getName(self):
+        return str(self.__NAME)
+    
+    def __gt__(self, other):
+        return self.__getHeadVolume() + self.__getBodyVolume() > other.__getHeadVolume() + other.__getBodyVolume()
 
-
-
+    def __getHeadRadius(self):
+        return self.__BODY_RADIUS
