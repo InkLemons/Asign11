@@ -36,4 +36,13 @@ class Orbian:
         return self.__getHeadVolume() + self.__getBodyVolume() > other.__getHeadVolume() + other.__getBodyVolume()
 
     def __getHeadRadius(self):
+        return self.__HEAD_RADIUS
+    
+    def __getBodyRadius(self):
         return self.__BODY_RADIUS
+    
+    def __getBodyHeight(self):
+        return self.__BODY_HEIGHT
+    
+    def __eq__(self,other):
+        return self.__getBodyVolume() + self.__getHeadVolume() == other.__getBodyVolume() + other.__getHeadVolume()

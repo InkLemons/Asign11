@@ -9,7 +9,7 @@ def main():
     print()
 
     family = []
-    input("Hit Enter to Create the First Four Orbians")
+    input("Hit Enter to Create the First Four Orbians: ")
 
     for i in range(0, 4):
         name = input("\tEnter a name for Orbian " + str(i + 1) + ": ")
@@ -87,13 +87,6 @@ def compare(famList):
     print("Select the second orbian to compare")
     orb2 = selectOrbian(famList)
     print("Performing analysis")
-    print("Orbian " + str(famList[first]))
-    if first < second:
-        print(famList[first], " is smaller than ", famlist[second])
-    elif first == second:
-        print(famList[first], "is equal to ", famList[second])
-    else:
-        print(famList[first], "is bigger than ", famList[second])
     ########### DO NOT MODIFY THIS FUNCTION BEYOND THIS LINE ############
     if (orb1 == orb2):
         print("\tOrbian " + orb1.getName() + " is equal to Orbian " + orb2.getName())
