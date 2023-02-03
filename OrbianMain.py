@@ -112,6 +112,9 @@ def info(famList):
     print("\tand is " + str(orbian.getVolume()) + " zogs, and " + str(len(orbian)) + " zings") # Volume measured in zogs, Height in zings
 
 def toPasture(famList):
+    print("Select an orbian to send to \x1B[3mTHE PASTURE\x1B[0m")
+    selorb = selectOrbian(famList)
+    famList.remove(selorb)
     #<<<<<<<<<<<<<< COMPLETE THIS ENTIRE FUNCTION >>>>>>>>>>>>>
     pass # Remove this line to work on this function. It is here to prevent errors until it's defined
 
