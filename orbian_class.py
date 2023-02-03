@@ -5,7 +5,7 @@ import time
 
 class Orbian:
     # DO NOT MODIFY THE CONSTRUCTOR
-    def __init__(self, name, headRadius, bodyRadius, bodyHeight):
+    def __init__(self, name, headRadius = 0, bodyRadius = 0, bodyHeight = 0):
         # NOTE: These are constants
         self.__HEAD_RADIUS = headRadius
         self.__BODY_RADIUS = bodyRadius
@@ -56,17 +56,22 @@ class Orbian:
         return round(age)
 
     def __len__(self):
-        return self.__BODY_HEIGHT + self.__HEAD_RADIUS * 2
+        return int(self.__BODY_HEIGHT + self.__HEAD_RADIUS * 2)
     
     def __add__(self, other):
-        __HEAD_RADIUS = (self.__HEAD_RADIUS + other.__HEAD_RADIUS) * .25
-        __BODY_RADIUS = (self.__BODY_RADIUS + other.__BODY_RADIUS) * .25
-        __BODY_HEIGHT = .125 * (len(self) + len(other))
+        HeadRad = (self.__HEAD_RADIUS + other.__getHeadRadius()) * .25
+        BodRad = (self.__BODY_RADIUS + other.__getBodyRadius()) * .25
+        BodHeight = .125 * (len(self) + len(other))
 
         babyName = (self.getName() + other.getName() ).lower()
-        babyName = "".join(sample(babyName, len(babyName)//2))
+        babyName = "".join(sample(babyName, len(babyName)//2)).capitalize()
 
-        babyOrbian = Orbian(babyName, __HEAD_RADIUS, __BODY_RADIUS, __BODY_HEIGHT)
+        babyOrbian = Orbian(babyName)
+        babyOrbian.__HEAD_RADIUS = HeadRad
+        babyOrbian.__BODY_HEIGHT = BodRad
+        babyOrbian.__BODY_HEIGHT = BodHeight
 
         return babyOrbian
+
+        
 

@@ -129,7 +129,13 @@ def toPasture(famList):
 def thanosSnap(famList):
     print("Uh oh. Orbian Thanos just snapped his fingers")
     thinking()
-    #<<<<<<<<<<<<<< COMPLETE THE REST OF THIS FUNCTION >>>>>>>>>>>>>
+    
+    famlen = (len(famList) / 2)
+    
+    while len(famList) != famlen:
+        remorb = selectOrbian(famList, famList[randint(0, famList)])
+        famList.remove(remorb)
+        
 
 
 main()
