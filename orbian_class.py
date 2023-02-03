@@ -1,5 +1,5 @@
 from math import pi
-from random import shuffle # Hint hint
+from random import shuffle, sample
 from random import randint
 import time
 
@@ -57,3 +57,16 @@ class Orbian:
 
     def __len__(self):
         return self.__BODY_HEIGHT + self.__HEAD_RADIUS * 2
+    
+    def __add__(self, other):
+        __HEAD_RADIUS = (self.__HEAD_RADIUS + other.__HEAD_RADIUS) * .25
+        __BODY_RADIUS = (self.__BODY_RADIUS + other.__BODY_RADIUS) * .25
+        __BODY_HEIGHT = .125 * (len(self) + len(other))
+
+        babyName = (self.getName() + other.getName() ).lower()
+        babyName = "".join(sample(babyName, len(babyName)//2))
+
+        babyOrbian = Orbian(babyName, __HEAD_RADIUS, __BODY_RADIUS, __BODY_HEIGHT)
+
+        return babyOrbian
+

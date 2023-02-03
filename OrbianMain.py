@@ -101,10 +101,9 @@ def createBaby(famList):
     print("Select the second orbian parent")
     orb2 = selectOrbian(famList, orb1)
 
-    #<<<<<<<<<<<<<< Write code to select two orbians to be parents >>>>>>>>>>>>>>>
-    orb1 = orb2 = None  # Remove this line to work on this function. It is here to prevent errors until it's defined
+    print("MAKING BABY", end="")
+    thinking()
 
-    ########### DO NOT MODIFY THIS FUNCTION BEYOND THIS LINE ############
     famList.append(orb1 + orb2)
     print("\tGreetings Orbian " + famList[len(famList) - 1].getName())
 
@@ -134,6 +133,3 @@ def thanosSnap(famList):
 
 
 main()
-
-#Hello!
-#Hello Again
