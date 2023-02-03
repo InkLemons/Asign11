@@ -96,6 +96,10 @@ def compare(famList):
         print("\tOrbian " + orb1.getName() + " is smaller than Orbian " + orb2.getName())
 
 def createBaby(famList):
+    print("Select the first orbian parent")
+    orb1 = selectOrbian(famList)
+    print("Select the second orbian parent")
+    orb2 = selectOrbian(famList)
     #<<<<<<<<<<<<<< Write code to select two orbians to be parents >>>>>>>>>>>>>>>
     orb1 = orb2 = None  # Remove this line to work on this function. It is here to prevent errors until it's defined
 
@@ -115,8 +119,9 @@ def toPasture(famList):
     print("Select an orbian to send to \x1B[3mTHE PASTURE\x1B[0m")
     selorb = selectOrbian(famList)
     famList.remove(selorb)
-    #<<<<<<<<<<<<<< COMPLETE THIS ENTIRE FUNCTION >>>>>>>>>>>>>
-    pass # Remove this line to work on this function. It is here to prevent errors until it's defined
+    print("\tFarewell dear" + selorb.getName(), end="")
+    thinking()
+    print("Sleep well " + selorb.getName()  + " have a good time in the afterlife.")
 
 
 def thanosSnap(famList):
