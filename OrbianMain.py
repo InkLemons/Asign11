@@ -9,7 +9,7 @@ def main():
     print()
 
     family = []
-    input("Hit Enter to Create the First Four Orbians: ")
+    input("Hit Enter to Create the First Four Orbians")
 
     for i in range(0, 4):
         name = input("\tEnter a name for Orbian " + str(i + 1) + ": ")
@@ -56,7 +56,7 @@ def main():
 
 def thinking():
     for i in range(5):
-        print(".", end="")
+        print(".", end="", flush= True)
         sleep(0.5) # You can comment this out while testing to make things go faster
     print()
 
@@ -85,7 +85,7 @@ def compare(famList):
     print("Select the first orbian to compare")
     orb1 = selectOrbian(famList)
     print("Select the second orbian to compare")
-    orb2 = selectOrbian(famList)
+    orb2 = selectOrbian(famList, orb1)
     print("Performing analysis")
     ########### DO NOT MODIFY THIS FUNCTION BEYOND THIS LINE ############
     if (orb1 == orb2):
@@ -99,7 +99,8 @@ def createBaby(famList):
     print("Select the first orbian parent")
     orb1 = selectOrbian(famList)
     print("Select the second orbian parent")
-    orb2 = selectOrbian(famList)
+    orb2 = selectOrbian(famList, orb1)
+
     #<<<<<<<<<<<<<< Write code to select two orbians to be parents >>>>>>>>>>>>>>>
     orb1 = orb2 = None  # Remove this line to work on this function. It is here to prevent errors until it's defined
 
@@ -119,8 +120,10 @@ def toPasture(famList):
     print("Select an orbian to send to \x1B[3mTHE PASTURE\x1B[0m")
     selorb = selectOrbian(famList)
     famList.remove(selorb)
-    print("\tFarewell dear" + selorb.getName(), end="")
+    
+    print("\tFarewell dear " + selorb.getName(), end="")
     thinking()
+    
     print("Sleep well " + selorb.getName()  + " have a good time in the afterlife.")
 
 
