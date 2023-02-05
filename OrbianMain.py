@@ -1,7 +1,11 @@
+#Hyrum Zaugg
+#Assignment 11
+
 from orbian_class import Orbian
 from time import sleep
 from random import randint
-from random import shuffle # Hint hint
+from random import shuffle
+import random
 
 
 def main():
@@ -127,13 +131,12 @@ def toPasture(famList):
 
 
 def thanosSnap(famList):
-    print("Uh oh. Orbian Thanos just snapped his fingers")
+    print("Uh oh. Orbian Thanos just snapped his fingers", end="")
     thinking()
     
-    shuffle(famList)
-    famList = famList[:len(famList)//2]
+    for i in range(len(famList)//2):
+        random_choice = random.choice(famList)
+        famList.remove(random_choice)
     return famList
-        
-
 
 main()
