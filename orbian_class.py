@@ -28,6 +28,11 @@ class Orbian:
             self.__adult = True
 
     ####### ADD OTHER REQUIRED METHODS BELOW. SEE THE ASSIGNMENT DESCRIPTION AND OTHER STARTER CODE FOR INSIGHT ######
+    def grow(self):
+        if self.__adult == True:
+            self.__HEAD_RADIUS *= 2
+            self.__BODY_RADIUS *= 2
+            self.__BODY_HEIGHT *= 4
 
     def getName(self):
         return str(self.__NAME)
@@ -49,11 +54,11 @@ class Orbian:
 
     def getVolume(self):
         vol = self.__getBodyVolume() + self.__getHeadVolume()
-        return round(vol)
+        return round(vol, 2)
 
     def getAge(self):
         age = (time.time() - self.__BIRTH_TIME) / 5
-        return round(age)
+        return round(age, 2)
 
     def __len__(self):
         return int(self.__BODY_HEIGHT + self.__HEAD_RADIUS * 2)
